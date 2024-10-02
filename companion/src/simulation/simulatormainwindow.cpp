@@ -32,6 +32,7 @@
 #ifdef JOYSTICKS
 #include "joystickdialog.h"
 #endif
+#include "serialdialog.h"
 
 #include <QDebug>
 #include <QDir>
@@ -131,6 +132,7 @@ SimulatorMainWindow::SimulatorMainWindow(QWidget *parent, const QString & simula
 
   connect(ui->actionShowKeymap, &QAction::triggered, this, &SimulatorMainWindow::showHelp);
   connect(ui->actionJoystickSettings, &QAction::triggered, this, &SimulatorMainWindow::openJoystickDialog);
+  connect(ui->actionSerialSettings, &QAction::triggered, this, &SimulatorMainWindow::openSerialDialog);
   connect(ui->actionToggleMenuBar, &QAction::toggled, this, &SimulatorMainWindow::showMenuBar);
   connect(ui->actionFixedRadioWidth, &QAction::toggled, this, &SimulatorMainWindow::showRadioFixedWidth);
   connect(ui->actionFixedRadioHeight, &QAction::toggled, this, &SimulatorMainWindow::showRadioFixedHeight);
@@ -469,6 +471,14 @@ void SimulatorMainWindow::openJoystickDialog(bool)
   jd->deleteLater();
 #endif
 }
+void SimulatorMainWindow::openSerialDialog(bool)
+{
+  serialDialog * sd = new serialDialog(this);
+    if (sd->exec() == QDialog::Accepted && m_simulatorWidget);
+  sd->deleteLater();
+
+}
+
 
 void SimulatorMainWindow::showHelp(bool show)
 {

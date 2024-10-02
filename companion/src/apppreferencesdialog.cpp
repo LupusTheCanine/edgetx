@@ -28,6 +28,7 @@
 #include "joystick.h"
 #include "joystickdialog.h"
 #endif
+#include "serialdialog.h"
 #include "moduledata.h"
 #include "compounditemmodels.h"
 #include "updates/updatefactories.h"

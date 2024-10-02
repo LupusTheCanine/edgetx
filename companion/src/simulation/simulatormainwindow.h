@@ -81,6 +81,8 @@ class SimulatorMainWindow : public QMainWindow
     void setRadioSizePolicy(int fixType);
     void toggleRadioDocked(bool dock);
     void openJoystickDialog(bool);
+    void openSerialDialog(bool);
+
     void showHelp(bool show);
 
   protected:

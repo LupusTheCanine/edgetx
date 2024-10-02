@@ -72,6 +72,7 @@
     <addaction name="actionScreenshot"/>
     <addaction name="actionJoystickSettings"/>
     <addaction name="actionShowKeymap"/>
+    <addaction name="actionSerialSettings"/>
    </widget>
    <addaction name="menuView"/>
    <addaction name="menuReload"/>
@@ -154,6 +155,23 @@
     <string>F3</string>
    </property>
   </action>
+
+  <action name="actionSerialSettings">
+   <property name="icon">
+    <iconset resource="../companion.qrc">
+     <normaloff>:/images/simulator/icons/svg/joystick_settings.svg</normaloff>:/images/simulator/icons/svg/joystick_settings.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Serial Settings</string>
+   </property>
+   <property name="toolTip">
+    <string>Open serial configuration settings dialog.</string>
+   </property>
+   <!--<property name="shortcut">
+    <string>F3</string>
+   </property>-->
+  </action>
+
   <action name="actionScreenshot">
    <property name="icon">
     <iconset resource="../companion.qrc">

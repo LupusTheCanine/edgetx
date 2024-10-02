@@ -15,6 +15,7 @@ set(${PROJECT_NAME}_NAMES
   widgets/lcdwidget
   widgets/radiowidget
   widgets/virtualjoystickwidget
+  serialdialog
 )
 
 if(SDL2_FOUND)
@@ -97,4 +98,8 @@ target_include_directories(${PROJECT_NAME}
     "${RADIO_SRC_DIR}/fonts/std"
   PUBLIC
     "${CMAKE_CURRENT_LIST_DIR}"
+    Qt5::SerialPort
+
 )
+find_package(Qt5 REQUIRED COMPONENTS SerialPort)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::SerialPort)
